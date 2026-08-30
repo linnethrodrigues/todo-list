@@ -1,15 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watchlist de Series y Cine</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <header>
-        <h1>Watchlist de Cine y Series - Mi Lista de Reproducción</h1>
+        <h1>Watchlist de Cine y Series</h1>
     </header>
-    
+    <main>
+        <section>
+            <form action="">
+                <label for="title-input">Añadir película o serie:</label>
+                <input type="text" id="title-input" name="title-input" placeholder="Ej. Game of Thrones" required>
+                <button type="submit">Añadir a la lista</button>
+            </form>
+        </section>
+        <section>
+            <h2>Películas y Series Guardadas</h2>
+            <ul>
+                <li>
+                    <input type="checkbox" id="title-1">
+                    <label for="title-1">House of the Dragon</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-2">
+                    <label for="title-2">Guardianes de la Galaxia Vol. 3</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-3">
+                    <label for="title-3">Sense8</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-4">
+                    <label for="title-4">La casa de papel</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-5">
+                    <label for="title-5">Avengers: Endgame</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-6">
+                    <label for="title-6">Avatar: El Sentido del Agua</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-7">
+                    <label for="title-7">Stranger Things</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-8">
+                    <label for="title-8">Spider-Man: No Way Home</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-9">
+                    <label for="title-9">Wednesday</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="title-10">
+                    <label for="title-10">Jurassic World</label>
+                </li>
+            </ul>
+            <div>
+                <button type="button">Eliminar vistas</button>
+                <button type="button">Eliminar todas</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Linneth Rodrigues</p>
+    </footer>
+
 </body>
+
 </html>
