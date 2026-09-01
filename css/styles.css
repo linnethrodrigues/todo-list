@@ -56,10 +56,37 @@ body {
     text-align: center;
 }
 
+.header-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    color: var(--color-primary); 
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s ease;
+}
+
+.header-brand:hover .header-icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.header-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
 .app-title {
     font-size: 2.25rem;
     color: var(--color-primary);
     letter-spacing: -0.5px;
+    font-weight: 700;
 }
 
 .main-container {
@@ -240,10 +267,22 @@ body {
 }
 
 .task-checkbox {
-    width: 1.15rem;
-    height: 1.15rem;
-    accent-color: var(--color-primary);
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--bg-card);
+    border: 2px solid var(--text-muted);
+    border-radius: var(--radius-sm);
     cursor: pointer;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.task-checkbox:hover {
+    border-color: var(--color-primary);
 }
 
 .task-label {
@@ -265,6 +304,21 @@ body {
     opacity: 0.4;
     filter: grayscale(100%);
     transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+/* Estado activo / marcado */
+.task-checkbox:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Icono de verificación cuando está marcado */
+.task-checkbox:checked::before {
+    content: '✓';
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: bold;
+    line-height: 1;
 }
 
 .badge {
@@ -308,7 +362,7 @@ body {
     flex-shrink: 0;
     white-space: nowrap;
     line-height: 1;
-    transition: opacity 0.2s ease, filter 0.2 ease;
+    transition: opacity 0.2s ease, filter 0.2s ease;
 }
 
 .task-rating strong{
@@ -328,6 +382,40 @@ body {
     filter: grayscale(80%);
 }
 
+/* Pestañas de filtros */
+.filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+}
+
+.filter-btn {
+    padding: 0.4rem 0.85rem;
+    background-color: var(--bg-input);
+    border: 1px solid #333333;
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: var(--text-primary);
+    border-color: #555555;
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: var(--text-primary);
+    border-color: var(--color-primary);
+    font-weight: 600;
+}
+
 .global-actions {
     display: flex;
     justify-content: flex-end;
@@ -341,6 +429,14 @@ body {
     text-align: center;
     font-size: 0.85rem;
     color: var(--text-muted);
+}
+
+/* Accesibilidad: Navegación por teclado */
+.task-checkbox:focus-visible,
+.filter-btn:focus-visible,
+.btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 /* Dispositivos móviles en posición vertical */
@@ -410,6 +506,16 @@ body {
         justify-self: start;
         font-size: 0.7rem;
         padding: 0.2rem 0.5rem;
+    }
+
+    .filter-tabs {
+        justify-content: flex-start;
+        gap: 0.4rem;
+    }
+
+    .filter-btn {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.65rem;
     }
 }
 

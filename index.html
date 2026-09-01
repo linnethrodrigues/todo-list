@@ -18,7 +18,19 @@
 
 <body>
     <header class="main-header">
+        <div class="header-brand">
+        <!-- Icono de claqueta de cine -->
+        <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="3" rx="2"/>
+            <path d="M7 3v4"/>
+            <path d="M11 3v4"/>
+            <path d="M15 3v4"/>
+            <path d="M3 7h18"/>
+            <path d="m3 11 18-4"/>
+        </svg>
         <h1 class="app-title">Watchlist de Cine y Series</h1>
+        </div>
+        <p class="header-subtitle">Organiza tus películas y series pendientes por ver</p>
     </header>
 
     <main class="main-container">
@@ -56,13 +68,21 @@
                 </div>
             </div>
 
+            <!-- Simulación de pestañas de filtro -->
+            <div class="filter-tabs">
+                <button type="button" class="filter-btn active">Todas</button>
+                <button type="button" class="filter-btn">Películas</button>
+                <button type="button" class="filter-btn">Series</button>
+                <button type="button" class="filter-btn">Pendientes</button>
+            </div>
+
             <!--Listado de tareas/títulos -->
             <ul class="task-list">
                 <li class="task-item">
                     <input type="checkbox" id="title-1" class="task-checkbox">
                     <img src="./assets/posters/house-of-the-dragon.jpg" alt="House of the Dragon" class="task-poster">
                     <label for="title-1" class="task-label">House of the Dragon</label>
-                    <span class="task-rating">★ <strong>8,3</strong><span class="rating-max">/10</span></span> 
+                    <span class="task-rating">★ <strong>8,3</strong><span class="rating-max">/10</span></span>
                     <span class="badge badge-series">Serie</span>
                 </li>
                 <li class="task-item">
@@ -131,6 +151,7 @@
                     <span class="badge badge-movie">Película</span>
                 </li>
             </ul>
+            
             <div class="global-actions">
                 <button type="button" class="btn btn-secondary">Eliminar vistas</button>
                 <button type="button" class="btn btn-danger">Eliminar todas</button>
