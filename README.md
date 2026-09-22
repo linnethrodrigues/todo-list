@@ -1,4 +1,4 @@
-# 🎬 Watchlist de Cine y Series (HTML & CSS)
+# 🎬 Watchlist de Cine y Series (HTML, CSS, JS)
 
 Una aplicación web interactiva diseñada para gestionar películas y series pendientes por ver, desarrollada con HTML5 semántico, CSS3 responsive y JavaScript vanilla.
 
